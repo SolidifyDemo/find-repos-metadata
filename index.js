@@ -1,4 +1,5 @@
-const Octokit = require('@octokit/core')
+import { Octokit } from "@actions/core";
+
 const core = require('@actions/core')
 const github = require('@actions/github')
 /* import fs from 'fs' */
