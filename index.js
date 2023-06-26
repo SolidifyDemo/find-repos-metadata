@@ -25,7 +25,7 @@ const main = async () => {
         return {
           repository: repo.name,
           organization: org.login,
-          visibility: repo.visibility,
+          //visibility: repo.visibility,
         };
       });
       allRepos = allRepos.concat(data);
