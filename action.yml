@@ -1,0 +1,16 @@
+name: 'Find Public Repos Action'
+description: 'Finds public repos within an organization'
+inputs:
+  token:
+    description: 'GitHub Token of authorized user'
+    required: true
+  visibility:
+    description: 'Visibility of repos to find'
+    required: true
+    default: 'public'
+outputs:
+  repos:
+    description: 'List of public repos'
+runs:
+  using: 'node16'
+  main: 'script.js'
