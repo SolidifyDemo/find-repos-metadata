@@ -30,8 +30,9 @@ const main = async () => {
                 visibility: repo.visibility,
             }
         })
-        console.log(data)
-        core.setOutput('repos', JSON.stringify(data))
+        const payload = JSON.stringify(github.context.payload, undefined, 2)
+        console.log(`The event payload: ${payload}`);
+        core.setOutput("repos", JSON.stringify(data))
 
         return data
     }
