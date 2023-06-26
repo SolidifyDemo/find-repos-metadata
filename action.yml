@@ -13,4 +13,4 @@ outputs:
     description: 'List of public repos'
 runs:
   using: 'node16'
-  main: 'script.js'
+  main: 'dist/index.js'
