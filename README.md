@@ -6,18 +6,20 @@ This action prints all repos of chosen visibility in organizations for an authen
 
 ### `token`
 
-**Required** The PAT of the user with access to organizations. Make sure to have *admin:enterprise, admin:org, repo, user, workflow* persmissions. 
+**Required** \
+The PAT of the user with access to organizations. Make sure to have *admin:enterprise, admin:org, repo, user, workflow* persmissions. 
 
 ### `visibility`
 
-**Not Required** The visiblity of the repos wanted. For example *public, private, etc*. Default `"public"`.
+**Not Required** \
+The visiblity of the repos wanted. For example *public, private, etc*. Default `"public"`.
 
 ## Outputs
 
 ### `repos`
 
 A list of repos in JSON format looking like: 
-```json
+```JSON
 {
   repository: 'REPO_NAME',
   organization: 'ORG_NAME',
