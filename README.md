@@ -7,7 +7,7 @@ This action prints all repos of chosen visibility in organizations for an authen
 ### `token`
 
 **Required** \
-The PAT of the user with access to organizations. Make sure to have *admin:enterprise, admin:org, repo, user, workflow* persmissions. 
+The PAT of the user with access to organizations. Make sure to have *admin:enterprise, admin:org, repo, user, workflow* permissions. 
 
 ### `visibility`
 
