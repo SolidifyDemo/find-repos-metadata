@@ -9,13 +9,13 @@ const main = async () => {
     const octokit = new github.getOctokit(token);
 
     const { data: orgs } = await octokit.rest.orgs.listForAuthenticatedUser();
-    var allRepos = [];
+    const allRepos = [];
     var count = 0;
     orgs.forEach(async (org) => {
       await getRepos(org, visibility, allRepos);
     });
     //Remember to check how many repos there are and if there are more than 100, use pagination
-    async function getRepos(org, visibility, allRepos, nrOrgs = orgs.length) {
+    async function getRepos(org, visibility, allRepos) {
       const { data: repos } = await octokit.rest.repos.listForOrg({
         org: org.login,
         per_page: 100,
@@ -25,13 +25,13 @@ const main = async () => {
         return {
           repository: repo.name,
           organization: org.login,
-          //visibility: repo.visibility,
+          visibility: repo.visibility,
         };
       });
-      allRepos = allRepos.concat(data);
+      allRepos.push(data);
       count++;
-      if (count == nrOrgs) {
-        core.setOutput("repos", JSON.stringify(data));
+      if (count == orgs.length) {
+        core.setOutput("repos", JSON.stringify(allRepos));
       }
     }
   } catch (error) {
